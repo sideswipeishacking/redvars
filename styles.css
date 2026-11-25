@@ -188,7 +188,7 @@ details[open] > .ltv-cat-hdr::before { transform: rotate(90deg); }
   white-space: nowrap;
 }
 .ltv-add-btn:hover { opacity: 0.85; }
-.ltv-delete-var:hover { color: var(--text-error) !important; opacity: 1 !important; }
+.ltv-row:hover .ltv-delete-var:hover { color: var(--text-error); opacity: 1; }
 
 /* Custom section controls (rename / delete) in category header */
 .ltv-cat-ctrl {
@@ -197,8 +197,8 @@ details[open] > .ltv-cat-hdr::before { transform: rotate(90deg); }
   margin-left: auto;
 }
 .ltv-cat-hdr:hover .ltv-cat-ctrl { opacity: 1; }
-.ltv-rename-section:hover { color: var(--text-accent) !important; opacity: 1 !important; }
-.ltv-delete-section:hover { color: var(--text-error) !important; opacity: 1 !important; }
+.ltv-cat-hdr:hover .ltv-rename-section:hover { color: var(--text-accent); opacity: 1; }
+.ltv-cat-hdr:hover .ltv-delete-section:hover { color: var(--text-error); opacity: 1; }
 
 /* Inline section rename input (replaces label span) */
 .ltv-section-rename-inp {
