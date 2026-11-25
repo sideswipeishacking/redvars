@@ -1,0 +1,251 @@
+.ltv-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: 11px;
+  overflow-y: auto;
+}
+
+.ltv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.ltv-title {
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--text-normal);
+}
+
+.ltv-btn-danger {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--background-modifier-error);
+  color: var(--text-on-accent);
+  border: none;
+  cursor: pointer;
+  opacity: 0.85;
+}
+.ltv-btn-danger:hover { opacity: 1; }
+
+.ltv-cat {
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.ltv-cat-hdr {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  user-select: none;
+  background: var(--background-secondary);
+}
+.ltv-cat-hdr::-webkit-details-marker { display: none; }
+.ltv-cat-hdr::before {
+  content: '▶';
+  font-size: 7px;
+  display: inline-block;
+  transition: transform 0.12s ease;
+  color: var(--text-faint);
+}
+details[open] > .ltv-cat-hdr::before { transform: rotate(90deg); }
+.ltv-cat-hdr:hover {
+  color: var(--text-normal);
+  background: var(--background-modifier-hover);
+}
+
+.ltv-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 6px 1px 10px;
+  min-height: 20px;
+}
+.ltv-row:hover { background: var(--background-modifier-hover); }
+
+.ltv-var-name {
+  font-family: var(--font-monospace);
+  font-size: 10px;
+  color: var(--text-accent);
+  min-width: 110px;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.ltv-var-input {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-monospace);
+  font-size: 10px;
+  padding: 1px 4px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: var(--background-primary-alt);
+  color: var(--text-normal);
+  height: 18px;
+}
+.ltv-var-input:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+  background: var(--background-primary);
+}
+.ltv-var-input::placeholder {
+  color: var(--text-faint);
+  font-size: 9px;
+}
+
+.ltv-btn {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 10px;
+  background: transparent;
+  color: var(--text-faint);
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.ltv-row:hover .ltv-btn { opacity: 1; }
+.ltv-btn:hover { background: var(--background-modifier-hover); }
+.ltv-copy:hover { color: var(--text-accent); }
+.ltv-clear-row:hover { color: var(--text-error); }
+
+/* Create variable section */
+.ltv-add-box {
+  border-top: 2px solid var(--background-modifier-border);
+  padding: 5px 8px;
+  flex-shrink: 0;
+  background: var(--background-secondary);
+}
+.ltv-add-row {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.ltv-add-name {
+  font-family: var(--font-monospace);
+  font-size: 10px;
+  width: 100px;
+  flex-shrink: 0;
+  padding: 2px 4px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 2px;
+  background: var(--background-primary);
+  color: var(--text-accent);
+  height: 18px;
+}
+.ltv-add-desc {
+  flex: 1;
+  min-width: 0;
+  font-size: 10px;
+  padding: 2px 4px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 2px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  height: 18px;
+}
+.ltv-add-name:focus, .ltv-add-desc:focus {
+  outline: none;
+  border-color: var(--interactive-accent);
+}
+.ltv-add-btn {
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 2px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  height: 18px;
+  white-space: nowrap;
+}
+.ltv-add-btn:hover { opacity: 0.85; }
+.ltv-delete-var:hover { color: var(--text-error) !important; opacity: 1 !important; }
+
+/* Custom section controls (rename / delete) in category header */
+.ltv-cat-ctrl {
+  opacity: 0;
+  transition: opacity 0.1s;
+  margin-left: auto;
+}
+.ltv-cat-hdr:hover .ltv-cat-ctrl { opacity: 1; }
+.ltv-rename-section:hover { color: var(--text-accent) !important; opacity: 1 !important; }
+.ltv-delete-section:hover { color: var(--text-error) !important; opacity: 1 !important; }
+
+/* Inline section rename input (replaces label span) */
+.ltv-section-rename-inp {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-normal);
+  background: var(--background-primary);
+  border: 1px solid var(--interactive-accent);
+  border-radius: 2px;
+  padding: 0 4px;
+  height: 16px;
+  width: 120px;
+  outline: none;
+}
+
+/* Section row (new section) in add area */
+.ltv-section-row {
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+/* Section selector in add variable row */
+.ltv-section-sel {
+  font-size: 10px;
+  padding: 1px 2px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 2px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  height: 18px;
+  flex-shrink: 0;
+  max-width: 90px;
+  cursor: pointer;
+}
+.ltv-section-sel:focus { outline: none; border-color: var(--interactive-accent); }
+
+/* Inline substitution in note code blocks */
+.ltv-val {
+  color: var(--color-green, #6abf69);
+  font-weight: 600;
+  border-bottom: 1px dashed currentColor;
+  cursor: help;
+}
+.ltv-empty {
+  color: var(--color-orange, #e5a550);
+  opacity: 0.85;
+}
