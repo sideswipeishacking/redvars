@@ -1,6 +1,6 @@
 {
   "id": "redvars",
-  "name": "RedVars – Live Target Variables",
+  "name": "RedVars - Live Target Variables",
   "version": "1.1.0",
   "minAppVersion": "1.4.0",
   "description": "Collapsible side panel for filling in hacking/security variable values (LHOST, RHOST, passwords, hashes …) that are live-substituted inside code blocks in Reading View. Copy buttons paste the real values, not the placeholders.",
